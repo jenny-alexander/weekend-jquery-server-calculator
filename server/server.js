@@ -11,6 +11,7 @@ app.use( bodyparser.urlencoded( { extended: true } ) );
 
 //globals
 const port = 5000;
+let answer = 0;
 let calculations = [];
 
 //spin up server
@@ -27,6 +28,28 @@ app.get( '/calculations', ( req, res )=>{
 //POST route
 app.post( '/calculations', ( req, res )=>{
     console.log( '/calculations POST hit:', req.body );
+
+    let firstOperator = Number(req.body.firstNum);
+    let secondOperator = Number(req.body.secondNum);
+
+    //do calculation
+    switch ( req.body.operation ) {
+        case ( '+' ):
+            req.body.answer = firstOperator + secondOperator;
+            console.log(req.body.answer);
+            break;
+        case ( '-' ):
+            req.body.answer = firstOperator - secondOperator;
+            break;
+        case ( '*' ):
+            req.body.answer = firstOperator * secondOperator;
+            break;
+        case ( '/' ):
+            req.body.answer = firstOperator / secondOperator;
+            break;
+    }
+
     calculations.push( req.body );
     res.sendStatus( 200 );
 })
+

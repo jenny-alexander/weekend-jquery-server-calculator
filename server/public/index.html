@@ -13,16 +13,22 @@
     <h1>Server Side Calculator</h1>   
     <div id="inputDiv">
         <input type="text" id="firstNum">
-        <button id="add">+</button>
-        <button id="subtract">-</button>
-        <button id="multiply">*</button>
-        <button id="divide">/</button>
+        <!-- <input id="add" type="button" value="+">
+        <input id="subtract" type="button" value="-">
+        <input id="multiply" type="button" value="*">
+        <input id="divide" type="button" value="/"> -->
+        <button class="operationButton" id="add">+</button>
+        <button class="operationButton" id="subtract">-</button>
+        <button class="operationButton" id="multiply">*</button>
+        <button class="operationButton" id="divide">/</button>
         <input type="text" id="secondNum">
         <button id="submitCalculationButton">=</button>
         <button id="clearInput">C</button>
     </div>
     <div id="outputDiv">
         <p id="calcAnswer"></p>
+        <ul id="calculationsOut">
+        </ul>
     </div>
 </body>
 </html>
