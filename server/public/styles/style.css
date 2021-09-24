@@ -1,4 +1,21 @@
-h1 {
+body {
     font-family: 'Courier New', Courier, monospace;
     color: navy;
+}
+
+#calcAnswer {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Remove the up and down arrows from input type = number 
+in Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
